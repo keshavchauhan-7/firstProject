@@ -1,16 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Text, View } from 'react-native'
+import React, { Component } from 'react'
 
-const Kyc = () => {
+export class Kyc extends Component {
+  render() {
     return (
-        <View>
-            <View>
-                <Text> Kyc </Text>
-            </View>
-        </View>
+      <View>
+        <Text>Kyc</Text>
+      </View>
     )
+  }
 }
 
 export default Kyc
-
-const styles = StyleSheet.create({})

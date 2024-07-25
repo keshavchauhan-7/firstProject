@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, Button, StyleSheet, ScrollView, ImageBackground, SafeAreaView } from 'react-native';
-import Map from './Map'; // Import the Map component
+import Map from './Map'; 
 
 const AboutUs = () => {
     const initialRegion = {
