@@ -1,27 +1,29 @@
-// import React from 'react';
-// import Home from './components/Home';
-// import Kyc from './components/Kyc';
-// import Pdf from './components/Pdf';
-// import AboutUs from './components/AboutUs';
-// import ReactTable from './components/ReactTable';
-// import ReactVectorIcons from './components/ReactVectorIcons';
-// import ReactToast from './components/ReactToast';
-// import ReactWebView from './components/ReactWebView';
-// const App = () => {
-//   return (
-//     <>
-//       {/* <Home />; */}
-//       {/* <Kyc /> */}
-//       {/* <Pdf/> */}
-//       {/* <AboutUs/> */}
-//       {/* <ReactTable/> */}
-//       {/* <ReactVectorIcons/> */}
-//       {/* <ReactToast/> */}
-//       <ReactWebView/>
-//     </>
-//   )
-// };
-// export default App;
+import React from 'react';
+import Home from './components/Home';
+import Kyc from './components/Kyc';
+import Pdf from './components/Pdf';
+import AboutUs from './components/AboutUs';
+import ReactTable from './components/ReactTable';
+import ReactVectorIcons from './components/ReactVectorIcons';
+import ReactToast from './components/ReactToast';
+import ReactWebView from './components/ReactWebView';
+import QuizApp from './quizapp/QuizApp';
+const App = () => {
+  return (
+    <>
+      {/* <Home />; */}
+      {/* <Kyc /> */}
+      {/* <Pdf/> */}
+      {/* <AboutUs/> */}
+      {/* <ReactTable/> */}
+      {/* <ReactVectorIcons/> */}
+      {/* <ReactToast/> */}
+      {/* <ReactWebView/> */}
+      <QuizApp/>
+    </>
+  )
+};
+export default App;
 
 
 // import * as React from 'react';
@@ -63,32 +65,32 @@
 // }
 
 
-import React from 'react';
-import { Button } from 'react-native';
-import Mailer from 'react-native-mail';
+// import React from 'react';
+// import { Button } from 'react-native';
+// import Mailer from 'react-native-mail';
 
-const sendEmail = () => {
-  Mailer.mail({
-    subject: 'Need help',
-    recipients: ['kc7352004@gmail.com'],
-    body: '<b>Bolded Body Content</b>',
-    isHTML: true,
-  }, (error, event) => {
-    if (error) {
-      console.log('Email Error:', error);
-    }
-    console.log('Email Event:', event);
-  });
-};
+// const sendEmail = () => {
+//   Mailer.mail({
+//     subject: 'Need help',
+//     recipients: ['kc7352004@gmail.com'],
+//     body: '<b>Bolded Body Content</b>',
+//     isHTML: true,
+//   }, (error, event) => {
+//     if (error) {
+//       console.log('Email Error:', error);
+//     }
+//     console.log('Email Event:', event);
+//   });
+// };
 
-// Example usage in a component
-const App = () => {
-  return (
-    <Button
-      title="Send Email"
-      onPress={sendEmail}
-    />
-  );
-};
+// // Example usage in a component
+// const App = () => {
+//   return (
+//     <Button
+//       title="Send Email"
+//       onPress={sendEmail}
+//     />
+//   );
+// };
 
-export default App;
+// export default App;
