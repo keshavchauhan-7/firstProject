@@ -16,6 +16,7 @@ export const questionData = [
             'C) United States, Italy, Japan',
             'D) Ottoman Empire, Bulgaria, Germany'
         ],
+        marked: -1,
     },
     {
         question: 'Which countries were part of the Triple Entente?',
