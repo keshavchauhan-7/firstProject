@@ -2,37 +2,89 @@ import React, { useRef, useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity, Dimensions, Modal } from 'react-native'
 import { questionData } from './Questions'
 import QuestionItem from './QuestionItem';
+import * as Progress from 'react-native-progress';
+
+
+
 const { height, width } = Dimensions.get('window')
 
 const QuizApp = () => {
   const [currentIndex, setCurrentindex] = useState(1);
+
+
+
   const [questions, setQuestions] = useState(questionData);
   const listRef = useRef()
   const [modalVisible, setModalVisible] = useState(false);
-  const OnSelectOption = (index, x) => {
-    const tempData = questions;
-    tempData.map((item, ind) => {
-      if (index == ind) {
-        item.marked = x;
-      }
-    })
-    let temp = [];
-    tempData.map(item => {
-      temp.push(item)
-    })
-    setQuestions(temp);
+  const[quizProgress, setQuizProgress] = useState(questionData.length);
+
+
+  const progress = (currentIndex ) / quizProgress;
+
+  // const OnSelectOption = (index, x) => {
+  //   const tempData = questions;
+  //   tempData.map((item, ind) => {
+  //     if (index == ind) {
+  //       if (item.marked !== -1) {
+  //         item.marked = -1;
+  //       }else{
+  //         item.marked = x;
+  //       }
+  //     }
+  //   })
+  //   let temp = [];
+  //   tempData.map(item => {
+  //     temp.push(item)
+  //   })
+  //   setQuestions(temp);
+  // };
+
+
+
+  //
+  // const OnSelectOption = (index, selectedOption) => {
+  //   const tempData = [...questions];
+  //   tempData[index].marked = selectedOption;
+
+  //   setQuestions(tempData);
+  // };
+
+  //
+
+  const OnSelectOption = (index, selectedOption) => {
+    const tempData = [...questions];
+    if (tempData[index].marked === -1) {
+      tempData[index].marked = selectedOption;
+      setQuestions(tempData);
+    }
   };
+
+
+  // const getTextScore = () => {
+  //   let marks = 0;
+  //   questions.map(item => {
+  //     if (item.marked !== -1) {
+  //       marks = marks + 5;
+  //     }
+  //   })
+  //   return marks;
+  // }
+
+
+  //
 
   const getTextScore = () => {
     let marks = 0;
-    questions.map(item => {
-      if (item.marked !== -1) {
-        marks = marks + 5;
+    questions.forEach(item => {
+      if (item.marked === item.correctAnswer) {
+        marks += 5; // Award 5 points for each correct answer
       }
-    })
+    });
     return marks;
-  }
+  };
 
+
+  //
   const reset = () => {
     const tempData = questions;
     tempData.map((item, ind) => {
@@ -47,10 +99,19 @@ const QuizApp = () => {
   };
   return (
     <View style={{ flex: 1 }}>
+
+      <View style={{ flexDirection:'row'}}>
+        <View style={{flex:1, margin:15}}>
+          <Progress.Bar progress={progress} width={null} height={15} color={"purple"} />
+        </View>
+      </View>
+
+
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
         <Text
           style={{
             fontSize: 20,
+            fontWeight: 600,
             marginTop: 20,
             marginLeft: 20,
             color: '#000'
@@ -114,7 +175,7 @@ const QuizApp = () => {
           <Text style={{ color: '#fff', fontSize: 20 }}>Previous</Text>
         </TouchableOpacity>
 
-        {currentIndex == 8 ? (<TouchableOpacity
+        {currentIndex == 10 ? (<TouchableOpacity
           style={{
             backgroundColor: 'green',
             height: 50,
@@ -138,13 +199,14 @@ const QuizApp = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }} onPress={() => {
-            if (currentIndex < questions.length) {
-              listRef.current.scrollToIndex({
-                animated: true,
-                index: currentIndex,
-              })
+            if (questions[currentIndex - 1].marked !== -1) {
+              if (currentIndex < questions.length) {
+                listRef.current.scrollToIndex({
+                  animated: true,
+                  index: currentIndex,
+                })
+              }
             }
-
           }}>
           <Text style={{ color: '#fff', fontSize: 20 }}>Next</Text>
         </TouchableOpacity>
@@ -208,3 +270,4 @@ const QuizApp = () => {
 }
 
 export default QuizApp
+

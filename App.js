@@ -8,9 +8,11 @@ import ReactVectorIcons from './components/ReactVectorIcons';
 import ReactToast from './components/ReactToast';
 import ReactWebView from './components/ReactWebView';
 import QuizApp from './quizapp/QuizApp';
+import AppNavigator from './navigation/AppNavigator';
 const App = () => {
   return (
     <>
+    <AppNavigator/>
       {/* <Home />; */}
       {/* <Kyc /> */}
       {/* <Pdf/> */}
@@ -19,7 +21,7 @@ const App = () => {
       {/* <ReactVectorIcons/> */}
       {/* <ReactToast/> */}
       {/* <ReactWebView/> */}
-      <QuizApp/>
+      {/* <QuizApp/>  */}
     </>
   )
 };
