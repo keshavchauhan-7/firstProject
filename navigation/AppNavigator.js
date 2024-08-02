@@ -11,9 +11,9 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Quiz" component={Splash} />
-        <Stack.Screen name="QuizApp" component={QuizApp} />
-        <Stack.Screen name="ResultScreen" component={ResultScreen} />
+        <Stack.Screen name="Quiz" component={Splash} options={{headerShown:false}} />
+        <Stack.Screen name="QuizApp" component={QuizApp} options={{headerShown:false}} />
+        <Stack.Screen name="ResultScreen" component={ResultScreen} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

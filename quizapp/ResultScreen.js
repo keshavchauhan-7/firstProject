@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, Button } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
-const ResultScreen = ({ route }) => {
+const ResultScreen = ({navigation, route }) => {
   const { questions } = route.params;
 
   return (
@@ -24,6 +24,8 @@ const ResultScreen = ({ route }) => {
           </View>
         )}
       />
+            {/* <TouchableOpacity onPress={()=>navigation.navigate('Quiz')}><Text>Home</Text></TouchableOpacity> */}
+
     </View>
   );
 };
