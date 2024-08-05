@@ -15,7 +15,7 @@ import PaymentScreen from './components/PaymentScreen';
 const App = () => {
   return (
     <>
-      {/* <AppNavigator/> */}
+      <AppNavigator/>
       {/* <Home />; */}
       {/* <Kyc /> */}
       {/* <Pdf/> */}
@@ -25,9 +25,10 @@ const App = () => {
       {/* <ReactToast/> */}
       {/* <ReactWebView/> */}
       {/* <QuizApp/>  */}
-      <StripeProvider publishableKey="pk_test_51PgO1VRsVlmQY2pORxX6YEEVgdq2gYoauG5vttrWmLKQoVGqdTVUv5qa4EciEGiSfo4sJW5a8DdkgaEy7c9tYtVk00YmZGBtWP">
+      {/* <StripeProvider publishableKey="pk_test_51PgO1VRsVlmQY2pORxX6YEEVgdq2gYoauG5vttrWmLKQoVGqdTVUv5qa4EciEGiSfo4sJW5a8DdkgaEy7c9tYtVk00YmZGBtWP">
         <PaymentScreen />
-      </StripeProvider>
+      </StripeProvider> */}
+      
     </>
   )
 };
