@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <View style={{ flex: 1 }}>
-        {/* <AppNavigator /> */}
+        <AppNavigator />
         {/* <Home />; */}
         {/* <Kyc /> */}
         {/* <Pdf/> */}
@@ -39,7 +39,7 @@ const App = () => {
         {/* <ReactEmail/> */}
         {/* <ReactFirebase /> */}
         {/* <ReactChatgpt/> */}
-        <SocialAuth/>
+        {/* <SocialAuth/> */}
       </View>
     </>
   )

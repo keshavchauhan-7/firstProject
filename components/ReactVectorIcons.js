@@ -14,12 +14,12 @@ const ReactVectorIcons = () => {
       <View style={styles.sidebar}>
         <Text style={{ color: 'white', margin: 10, fontSize: 20 }}>Gmail</Text>
 
-        <View style={{height:0.4, backgroundColor: '#fff'}}></View>
-        <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10, marginTop:20, marginBottom:20 }}>
+        <View style={{ height: 0.4, backgroundColor: '#fff' }}></View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10, marginTop: 20, marginBottom: 20 }}>
           <MaterialCommunityIcons name="inbox" size={20} color="#fff" />
           <Text style={styles.name}>All inboxes</Text>
         </View>
-        <View style={{height:0.4, backgroundColor: '#fff'}}></View>
+        <View style={{ height: 0.4, backgroundColor: '#fff' }}></View>
 
 
         <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}>
@@ -34,10 +34,10 @@ const ReactVectorIcons = () => {
 
         <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}>
           <Icon name="inbox" size={20} color="#fff" />
-          <Text style={styles.name}>Social</Text>  
+          <Text style={styles.name}>Social</Text>
         </View>
 
-        <Text style={{marginLeft:10, marginTop:20, fontSize:12, color:'#fff'}}>All labels</Text>
+        <Text style={{ marginLeft: 10, marginTop: 20, fontSize: 12, color: '#fff' }}>All labels</Text>
 
         <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}>
           <Icon name="star-o" size={20} color="#fff" />
@@ -94,9 +94,9 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#404040'
   },
-  name:{
-    color:'#fff',
-    marginLeft:20
+  name: {
+    color: '#fff',
+    marginLeft: 20
   }
 })
 
